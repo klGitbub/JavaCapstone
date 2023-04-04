@@ -2,6 +2,8 @@ package com.example.javacapstone.model;
 
 import javax.persistence.*;
 
+import java.util.List;
+
 public class PlayerEntity {
 
     @Id

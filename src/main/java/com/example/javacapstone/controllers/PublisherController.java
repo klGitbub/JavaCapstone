@@ -1,4 +1,4 @@
 package com.example.javacapstone.controllers;
 
-public class Publisher {
+public class PublisherController {
 }

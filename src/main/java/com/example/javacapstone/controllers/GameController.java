@@ -13,7 +13,7 @@ import java.util.List;
 public class GameController {
 
 
-    @RequestMapping
+    @RequestMapping("/")
     public String getIndexPage(){ return "index"; }
 
     @RequestMapping("/AddGameForm")
