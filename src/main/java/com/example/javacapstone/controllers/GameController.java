@@ -16,4 +16,7 @@ public class GameController {
     @RequestMapping
     public String getIndexPage(){ return "index"; }
 
+    @RequestMapping("/AddGameForm")
+    public String addGameForm(){ return "addGame";}
+
 }
