@@ -5,9 +5,9 @@
     <session-factory>
         <!-- JDBC Database connection settings -->
         <property name="connection.driver_class">org.postgresql.Driver</property>
-        <property name="connection.url">jdbc:postgresql://ec2-3-208-79-113.compute-1.amazonaws.com:5432/d13opf0vuqu8</property>
-        <property name="connection.username">mmahhdhsjsuoxb</property>
-        <property name="connection.password">14afa1ce190471fb6e8e61bf442a1d00ba6beb33d0abf693d75d24ad9ba68cee</property>
+        <property name="connection.url">postgresql://klGitbub:v2_42r4d_nyhJJEb65RSN2wpFREf77tx@db.bit.io:5432/klGitbub/SpecCapstoneProject</property>
+        <property name="connection.username">klGitbub</property>
+        <property name="connection.password">v2_42r4d_nyhJJEb65RSN2wpFREf77tx</property>
         <!-- JDBC connection pool settings ... using built-in test pool -->
         <property name="connection.pool_size">1</property>
         <!-- Select our SQL dialect -->

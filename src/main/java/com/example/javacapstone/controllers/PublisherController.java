@@ -5,19 +5,20 @@ import com.example.javacapstone.repositories.PublisherRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PutMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
 import java.util.Optional;
+import java.util.concurrent.Flow;
 
 @Controller
+@RestController
 
 @RequestMapping("/publishers")
 public class PublisherController {
     @Autowired
     public PublisherRepository publisherRepository;
+
 
     @PutMapping("/{id}")
     public ResponseEntity<?> updatePublisher(@PathVariable Long id, @RequestBody PublisherEntity publisherEntity) {

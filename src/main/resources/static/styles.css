@@ -1,0 +1,4 @@
+#add-publisher-form, #add-game-form, #add-player-form, #add-game-to-player-form {
+    display: none;
+    margin-top: 20px;
+}
