@@ -5,7 +5,7 @@
     <session-factory>
         <!-- JDBC Database connection settings -->
         <property name="connection.driver_class">org.postgresql.Driver</property>
-        <property name="connection.url">postgresql://klGitbub:v2_42r4d_nyhJJEb65RSN2wpFREf77tx@db.bit.io:5432/klGitbub/SpecCapstoneProject</property>
+        <property name="connection.url">jdbc:postgresql://klGitbub:v2_42r4d_nyhJJEb65RSN2wpFREf77tx@db.bit.io:5432/klGitbub/SpecCapstoneProject</property>
         <property name="connection.username">klGitbub</property>
         <property name="connection.password">v2_42r4d_nyhJJEb65RSN2wpFREf77tx</property>
         <!-- JDBC connection pool settings ... using built-in test pool -->

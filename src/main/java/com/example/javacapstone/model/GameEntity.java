@@ -1,7 +1,5 @@
 package com.example.javacapstone.model;
 
-import org.springframework.stereotype.Repository;
-
 import javax.persistence.*;
 import java.util.Set;
 
