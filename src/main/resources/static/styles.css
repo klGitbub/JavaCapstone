@@ -1,4 +1,120 @@
-#add-publisher-form, #add-game-form, #add-player-form, #add-game-to-player-form {
-    display: none;
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+}
+
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+*:focus {
+    outline: none;
+}
+
+.main-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.menu {
+    width: 30%;
+}
+
+.page-content {
+    width: 60%
+}
+
+.menu {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.menu ul {
+    flex-basis: 100%;
+    list-style: none;
+    padding: 0;
+}
+
+.menu li {
+    margin-bottom: 10px;
+}
+
+.menu a {
+    display: block;
+    padding: 10px;
+    background-color: #eee;
+    color: #333;
+    text-decoration: none;
+}
+
+.menu a:hover {
+    background-color: #ccc;
+}
+
+.form-container {
+    flex-basis: 100%;
     margin-top: 20px;
+}
+
+.form-container form {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.form-container label {
+    flex-basis: 100%;
+}
+
+.form-container input[type="text"],
+.form-container input[type="number"],
+.form-container select {
+    flex-basis: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+[type="submit"] {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+[type="submit"]:hover {
+    background-color: #66BB6A;
+}
+
+#publisher-list li, #game-list li, #player-list li, #players-games-list li {
+    background-color: #f2f2f2;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.active {
+    background-color: blue;
+    color: white;
+    font-weight: bold;
+    border: 2px solid black;
 }

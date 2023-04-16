@@ -1,6 +1,8 @@
 package com.example.javacapstone.model;
 
-import javax.persistence.*;
+import jakarta.persistence.*;
+
+import java.util.HashSet;
 import java.util.Set;
 
 @Entity
@@ -16,8 +18,6 @@ public class GameEntity {
     @Column(name = "game_name")
     private String game_name;
 
-    @Column(name = "game_publisher")
-    private String game_publisher;
 
     @Column(name = "game_developer")
     private String game_developer;
@@ -30,10 +30,18 @@ public class GameEntity {
 
     @ManyToOne
     @JoinColumn(name = "publisher_id")
-    private PublisherEntity publisherEntity;
+    private PublisherEntity publisher;
 
     @ManyToMany
-    Set<PlayerEntity> players;
+    Set<PlayerEntity> players = new HashSet<>();
+
+    @Transient
+    private Long publisher_id;
+
+    @Transient
+    public Long getPublisher_id() { return publisher_id; }
+
+    public void setPublisher_id(Long publisher_id) { this.publisher_id = publisher_id; }
 
     public Integer getId() {
         return id;
@@ -49,14 +57,6 @@ public class GameEntity {
 
     public void setGame_name(String game_name) {
         this.game_name = game_name;
-    }
-
-    public String getGame_publisher() {
-        return game_publisher;
-    }
-
-    public void setGame_publisher(String game_publisher) {
-        this.game_publisher = game_publisher;
     }
 
     public String getGame_developer() {
@@ -84,11 +84,11 @@ public class GameEntity {
     }
 
     public PublisherEntity getPublisherEntity() {
-        return publisherEntity;
+        return publisher;
     }
 
     public void setPublisherEntity(PublisherEntity publisherEntity) {
-        this.publisherEntity = publisherEntity;
+        this.publisher = publisherEntity;
     }
 
     public Set<PlayerEntity> getPlayers() {
@@ -98,5 +98,10 @@ public class GameEntity {
     public void setPlayers(Set<PlayerEntity> players) {
         this.players = players;
     }
+
+    public void addPlayer(PlayerEntity player) {
+        this.players.add(player);
+    }
+
 
 }

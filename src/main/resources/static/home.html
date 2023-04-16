@@ -6,8 +6,10 @@
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="path/to/axios.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.3.5/axios.min.js" integrity="sha512-nnNHpffPSgINrsR8ZAIgFUIMexORL5tPwsfktOTxVYSv+AUAILuFYWES8IHl+hhIhpFGlKvWFiz9ZEusrPcSBQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link rel="stylesheet" type="text/css" href="styles.css" >
 </head>
 <body>
+<div class="main-container">
     <div class = "menu">
         <ul>
             <li><a href="#add-publisher-form">Add a Publisher</a></li>
@@ -19,98 +21,125 @@
             <li><a href="#add-game-to-player-form">Add a Game to a Player</a></li>
             <li><a href="#games-and-players-list">Show All Games and the Players that Own Them</a></li>
         </ul>
-        <form id="add-publisher-form">
-                <label for="publisher-name">Name:</label>
-                <input type="text" id="publisher-name" name="publisher-name" required>
-                <button type="submit">Add Publisher</button>
+    </div>
+    <div class="page-content">
+        <!--Form to add publisher -->
+        <div class="page-section" id ="publisher-content">
+            <div id="add-publisher-form">
+                <form class="form-container">
+                    <h2>Add a Publisher</h2>
+                        <label for="publisher-name">Name:</label>
+                        <input type="text" id="publisher-name" name="publisher-name" required>
+                        <input type="submit" value="Add Publisher">
+                </form>
 
-        </form>
-
-        <div id="publishers-list">
-            <ul id="publisher-list">
+            </div>
         </div>
 
-        <form id="add-game-form">
-                <label for="game-name">Name:</label>
-                <input type="text" id="game-name" name="game-name"><br>
+        <!-- List of publishers added -->
+        <div class="page-section" id="publisher-list-content">
+            <div id="publishers-list">
+                <h1>Publishers</h1>
+                <ul id="publisher-list"></ul>
+            </div>
+        </div>
+        <!-- Form to add game -->
+        <div class="page-section" id="game-content">
+            <div id="add-game-form">
+                <form class="form-container" id="add-game-form-field">
+                    <h2>Add a Game</h2>
+                    <label for="game-name">Name:</label>
+                    <input type="text" id="game-name" name="game-name" required><br>
 
-                <label for="game-publisher">Publisher:</label>
-                <select id="game-publisher" name="game-publisher">
-                    <!-- Options for publishers will be added dynamically using JavaScript -->
-                </select><br>
+                    <label for="game-publisher">Publisher:</label>
+                    <select id="game-publisher" name="game-publisher" required>
+                        <!-- Options for publishers will be added dynamically using JavaScript -->
+                    </select><br>
 
-                <label for="game-developer">Developer:</label>
-                <input type="text" id="game-developer" name="game-developer"><br>
+                    <label for="game-developer">Developer:</label>
+                    <input type="text" id="game-developer" name="game-developer" required><br>
 
-                <label for="game-genre">Genre:</label>
-                <input type="text" id="game-genre" name="game-genre"><br>
+                    <label for="game-genre">Genre:</label>
+                    <input type="text" id="game-genre" name="game-genre" required><br>
 
-                <label for="game-platform">Platform:</label>
-                <input type="text" id="game-platform" name="game-platform"><br>
+                    <label for="game-platform">Platform:</label>
+                    <input type="text" id="game-platform" name="game-platform" required><br>
 
-                <input type="submit" value="Add Game">
-            </form>
+                    <input type="submit" value="Add Game">
+                </form>
 
-        </form>
+            </div>
+        </div>
 
+    <!-- List of Games -->
+    <div class="section" id="games-list-content">
         <div id="games-list">
-            <ul>
+            <h1>Games</h1>
+            <ul id="game-list"> </ul>
         </div>
+    </div>
 
+    <!-- Form to add player -->
+    <div class="page-section" class="player-content">
         <div id="add-player-form">
-            <form>
+            <form class="form-container" id="add-player-form-field">
+                <h2>Add Player</h2>
                 <label for="player-first-name">First Name:</label>
-                <input type="text" id="player-first-name" name="player-first-name"><br>
+                <input type="text" id="player-first-name" name="player-first-name" required><br>
 
                 <label for="player-last-name">Last Name:</label>
-                <input type="text" id="player-last-name" name="player-last-name"><br>
+                <input type="text" id="player-last-name" name="player-last-name" required><br>
 
                 <label for="player-gender">Gender:</label>
-                <select id="player-gender" name="player-gender">
+                <select id="player-gender" name="player-gender" required>
                     <option value="male">Male</option>
                     <option value="female">Female</option>
                     <option value="other">Other</option>
                 </select><br>
 
                 <label for="player-age">Age:</label>
-                <input type="number" id="player-age" name="player-age"><br>
+                <input type="number" id="player-age" name="player-age" required><br>
 
                 <input type="submit" value="Add Player">
             </form>
 
         </div>
+    </div>
 
-        <div id="players-list">
+        <div class=page-section id="player-list-content">
+            <div id="players-list">
             <!-- list of players goes here -->
+                <h1>Players</h1>
+                <ul id="player-list"> </ul>
+            </div>
         </div>
 
-        <div id="add-game-to-player-form" class="form-container">
-            <h2>Add Game to Player</h2>
-            <form id="add-game-to-player" action="">
-                <label for="player-id">Player ID:</label>
-                <input type="text" id="player-id" name="player-id" required>
+        <!-- Form to add game to player -->
+    <div class="page-section">
+        <div id="add-game-to-player-form">
+            <form class="form-container" id="add-game-to-player" action="">
+                <h2>Add Game to Player</h2>
+                    <label for="player-id">Player ID:</label>
+                    <input type="text" id="player-id" name="player-id" required>
 
-                <label for="game-id">Game ID:</label>
-                <input type="text" id="game-id" name="game-id" required>
+                    <label for="game-id">Game ID:</label>
+                    <input type="text" id="game-id" name="game-id" required>
 
-                <button type="submit">Add Game to Player</button>
+                    <input type="submit" value="Add Game to Player">
             </form>
         </div>
+    </div>
 
         <!-- Games and Players List Form -->
-        <div id="games-and-players-list" class="form-container">
+    <div class="page-section">
+        <div id="games-and-players-list">
             <h2>Games and Players List</h2>
-            <form id="games-and-players" action="">
-                <button type="submit">Show All Games and the Players that Own Them</button>
-            </form>
+            <ul id="players-games-list"></ul>
         </div>
 
-        <!--        <div class="form-container">-->
-<!--            <form id ="my-form">-->
-<!--                <button type="submit">Submit</button>-->
-<!--            </form>-->
-<!--        </div>-->
     </div>
+    </div>
+</div>
     <script src="js/script.js"></script>
 
 

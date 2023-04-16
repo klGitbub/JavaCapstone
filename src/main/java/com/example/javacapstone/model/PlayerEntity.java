@@ -1,7 +1,10 @@
 package com.example.javacapstone.model;
 
-import javax.persistence.*;
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.ObjectIdGenerators;
+import jakarta.persistence.*;
 
+import java.util.HashSet;
 import java.util.Set;
 
 @Entity
@@ -26,7 +29,9 @@ public class PlayerEntity {
     private String age;
 
     @ManyToMany
-    Set<GameEntity> games;
+    @JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class,
+            property = "id")
+    Set<GameEntity> games = new HashSet<>();
 
     public Integer getId() {
         return id;
@@ -74,5 +79,9 @@ public class PlayerEntity {
 
     public void setGames(Set<GameEntity> games) {
         this.games = games;
+    }
+
+    public void addGame(GameEntity game) {
+        this.games.add(game);
     }
 }
